@@ -1,0 +1,13 @@
+Steps summary :
+egrep  -c  ‘(vmx|svm)’ /proc/cpuinfo
+sudo  kvm-ok
+sudo apt install cpu-checker
+sudo kvm-ok
+sudo apt update
+sudo apt install qemu-kvm libvirt-daemon-system libvirt-clients bridge-utils
+virsh list  --all
+sudo systemctl enable --now libvirtd (optional)
+sudo apt install virt-manager
+sudo virt-manager
+
+https://phoenixnap.com/kb/ubuntu-install-kvm
