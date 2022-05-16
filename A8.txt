@@ -88,3 +88,54 @@ public class Sample
     }
   
 }
+
+
+
+
+
+
+public class SPS {
+    public String name;
+    public String address;
+    public Integer id;
+    public SPS(String name, String address, Integer id){
+        this.name = name;
+        this.address = address;
+        this.id = id;
+    }
+}
+
+
+public class SPS_DB {
+    SPS [] students;
+    public SPS_DB(){
+    students = new List <SPS> ();
+    }
+    public void addStudent(){
+        students.add(new SPS('Name1','Place1',0));
+        students.add(new SPS('Name2','Place2',1));
+        students.add(new SPS('Name3','Place3',2));
+    }
+    public void display(){
+        for(integer i=0; i<students.size(); i++){
+            system.debug('Name :'+ students[i].name);
+            system.debug('Address: ' + students[i].address);
+        }
+    }
+    public void updateStudent(Integer id ,String name, String address){
+        if(students.size() < id){
+            system.debug('Invalid Id');
+            return;
+        }
+        students[id].name = name;
+        students[id].address = address;
+    }
+    public void deleteStudent(Integer id){
+        if(students.size() < id){
+            system.debug('Invalid Id');
+            return;
+        }
+        students.remove(id);
+    }
+
+}
